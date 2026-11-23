@@ -1,64 +1,971 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ส่งงาน — Nursing Assignment Hub</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
-:root{--bg:#0b1020;--panel:#121a2d;--panel2:#172239;--line:#293650;--text:#edf3ff;--muted:#9aa9c4;--mint:#7df0c7;--blue:#85a8ff;--pink:#ff8eb5;--yellow:#ffd27d;--white:#eaf1ff}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#182849 0,transparent 38%),var(--bg);color:var(--text);font-family:'IBM Plex Sans Thai',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.shell{max-width:1440px;margin:auto;padding:26px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:13px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(135deg,var(--mint),var(--blue));display:grid;place-items:center;color:#09111f;font-size:24px;font-weight:700}.brand h1{font:700 20px 'Space Grotesk';margin:0}.brand small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.top-actions{display:flex;gap:10px;align-items:center}.pill{border:1px solid var(--line);background:#121a2d;color:var(--text);border-radius:999px;padding:10px 15px}.btn{border-radius:12px;padding:11px 16px;font-weight:600;background:var(--mint);color:#081320}.btn.secondary{background:#202d47;color:var(--text);border:1px solid var(--line)}.btn.danger{background:#482638;color:#ffd8e5;border:1px solid #75405a}.hero{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:20px 0 24px}.eyebrow{color:var(--mint);font-size:12px;font-weight:700;letter-spacing:1.5px}.hero h2{font-size:clamp(27px,4vw,42px);line-height:1.2;margin:9px 0}.hero p{color:var(--muted);margin:0}.hero-tag{padding:12px 16px;border:1px solid #34504f;background:#122b2b;border-radius:14px;color:var(--mint)}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:22px}.stat,.panel{background:linear-gradient(145deg,#151f34,#101829);border:1px solid var(--line);border-radius:19px}.stat{padding:19px}.stat-label{color:var(--muted);font-size:13px}.stat-value{font:700 30px 'Space Grotesk';margin:9px 0 4px}.stat-note{font-size:12px;color:var(--mint)}.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:18px}.panel{padding:21px}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.panel h3{margin:0;font-size:17px}.sub{color:var(--muted);font-size:12px;margin-top:4px}.controls{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:15px}.controls input,.controls select,.field input,.field select,.field textarea{background:#0d1526;border:1px solid var(--line);border-radius:11px;color:var(--text);padding:11px 12px;min-width:0}.controls input{flex:1;min-width:180px}.assignment{padding:16px;border:1px solid var(--line);border-radius:15px;background:#111a2c;margin-bottom:11px}.assignment-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.subject{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.3px}.assignment h4{font-size:16px;margin:5px 0}.assignment p{font-size:13px;color:var(--muted);margin:0 0 12px;line-height:1.6}.assignment-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.status-count{font-size:12px;color:var(--muted)}.status-count b{color:var(--text)}.progress{height:5px;border-radius:99px;background:#27334a;overflow:hidden;margin-top:13px}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--mint),var(--blue));border-radius:99px}.empty{padding:32px 15px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:13px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{padding:9px 14px;border-radius:10px;background:transparent;color:var(--muted);border:1px solid transparent}.tab.active{background:#1b2941;color:var(--text);border-color:var(--line)}.view{display:none}.view.active{display:block}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}.table th{color:var(--muted);font-weight:500}.field{display:grid;gap:7px;margin-bottom:13px}.field label{font-size:12px;color:var(--muted)}.field textarea{min-height:85px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.notice{padding:12px 14px;background:#17253a;border:1px solid #2b3c5b;color:var(--muted);border-radius:12px;font-size:12px;line-height:1.7;margin:12px 0}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);padding:12px 18px;background:#eafbf5;color:#0a1b18;border-radius:12px;font-weight:600;box-shadow:0 10px 40px #0008;display:none;z-index:20}.modal{position:fixed;inset:0;background:#050914cc;display:none;place-items:center;padding:18px;z-index:10}.modal.open{display:grid}.modal-card{width:min(620px,100%);background:#121b2f;border:1px solid var(--line);border-radius:20px;padding:23px;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.close{background:#26334a;color:white;border-radius:9px;padding:7px 11px}.footer{margin-top:25px;color:#687995;font-size:11px;text-align:center}.subject-group{margin:20px 0 17px}.subject-group:first-child{margin-top:0}.subject-heading{display:flex;align-items:center;gap:13px;color:#dce8ff;font-weight:700;font-size:15px;margin:0 0 13px}.subject-heading:after{content:"";height:2px;background:var(--white);opacity:.8;flex:1;border-radius:5px}.priority{font-size:11px;font-weight:700;border-radius:999px;padding:6px 10px;white-space:nowrap}.priority.normal{background:#173c35;color:#7df0c7;border:1px solid #286958}.priority.urgent{background:#493b1e;color:#ffd27d;border:1px solid #8a6b2d}.priority.critical{background:#482638;color:#ff9ab8;border:1px solid #85445f}.due{font-size:11px;color:#c6d3e9;margin-top:6px}.tag{font-size:11px;border-radius:99px;padding:5px 9px;background:#173c35;color:var(--mint)}.tag.pending{background:#493b1e;color:var(--yellow)}.proposal{padding:14px;border:1px solid var(--line);border-radius:13px;background:#101829;margin-bottom:10px}.proposal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hidden{display:none!important}@media(max-width:900px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:560px){.shell{padding:15px}.top{align-items:flex-start}.top-actions .pill{display:none}.hero{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:14px}.stat-value{font-size:25px}.panel{padding:15px}.form-grid{grid-template-columns:1fr}.assignment-foot{align-items:flex-start;flex-direction:column}.top-actions .btn{padding:10px 12px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ส่งงาน — Nursing Assignment Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080d1a;
+      --card: #0f172a;
+      --card-2: #162036;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #34d399;
+      --danger: #f87171;
+      --warning: #fbbf24;
+    }
+    * { box-sizing: border-box; font-family: 'IBM Plex Sans Thai', sans-serif; }
+    body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 20px 16px 80px; }
+    
+    /* Topbar */
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, #10b981, #0ea5e9); display: grid; place-items: center; font-weight: 700; color: #042f2e; font-size: 20px; }
+    .brand-title { font-weight: 700; font-size: 16px; letter-spacing: 0.5px; }
+    .brand-sub { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+    .status-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .badge-status { background: var(--card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 99px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warning); }
+    .dot.ok { background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    .dot.err { background: var(--danger); }
+
+    /* Profile Card */
+    .profile-banner { background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(14, 165, 233, 0.08)); border: 1px solid rgba(52, 211, 153, 0.3); border-radius: 16px; padding: 16px 20px; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .profile-info { display: flex; align-items: center; gap: 14px; }
+    .avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--card-2); border: 2px solid var(--accent); display: grid; place-items: center; font-size: 20px; font-weight: 700; color: var(--accent); }
+    .role-tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: rgba(52, 211, 153, 0.2); color: var(--accent); font-weight: 600; margin-left: 6px; }
+
+    /* Buttons & Inputs */
+    .btn { background: var(--card-2); color: var(--text); border: 1px solid var(--border); padding: 8px 16px; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn:hover { border-color: var(--accent); }
+    .btn-primary { background: var(--accent); color: #022c22; border: none; font-weight: 600; }
+    .btn-primary:hover { background: #6ee7b7; }
+    .btn-done { background: rgba(52, 211, 153, 0.15); color: var(--accent); border: 1px solid var(--accent); font-weight: 600; }
+    .btn-danger { background: rgba(248, 113, 113, 0.15); color: var(--danger); border-color: rgba(248, 113, 113, 0.3); }
+    .btn-sm { padding: 6px 12px; font-size: 13px; border-radius: 8px; }
+
+    input, select, textarea { width: 100%; background: #090e1c; border: 1px solid var(--border); color: var(--text); padding: 10px 12px; border-radius: 10px; font-size: 14px; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+
+    /* Hero & Stats */
+    .hero { padding: 24px 0 16px; }
+    .hero-tag { font-size: 12px; color: var(--accent); font-weight: 600; letter-spacing: 1px; }
+    .hero h1 { font-size: 30px; margin: 6px 0 8px; line-height: 1.25; }
+    .hero p { color: var(--muted); margin: 0; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+    .stat-label { font-size: 13px; color: var(--muted); }
+    .stat-val { font-size: 32px; font-weight: 700; margin: 4px 0; color: var(--text); }
+    .stat-sub { font-size: 12px; color: var(--muted); }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .tab { background: transparent; border: 1px solid transparent; color: var(--muted); padding: 9px 16px; border-radius: 10px; cursor: pointer; font-size: 14px; font-weight: 500; white-space: nowrap; }
+    .tab.active { background: var(--card-2); color: var(--accent); border-color: var(--border); }
+    .tab.hidden { display: none !important; }
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* Cards & Lists */
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
+    .filter-bar { display: grid; grid-template-columns: 240px 1fr; gap: 12px; margin-bottom: 20px; }
+    @media (max-width: 640px) { .filter-bar { grid-template-columns: 1fr; } }
+
+    /* Month Accordion */
+    .month-accordion { border: 1px solid var(--border); border-radius: 14px; margin-bottom: 16px; background: rgba(15, 23, 42, 0.5); overflow: hidden; }
+    .month-header { padding: 14px 18px; background: var(--card-2); display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; transition: 0.2s; gap: 12px; }
+    .month-header:hover { background: #1e293b; }
+    .month-title-wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .month-title { font-size: 16px; font-weight: 700; color: var(--text); }
+    .latest-badge { background: rgba(52, 211, 153, 0.2); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 99px; font-weight: 600; border: 1px solid rgba(52, 211, 153, 0.4); }
+    .month-meta { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+    .chevron { transition: transform 0.25s ease; display: inline-block; font-size: 12px; }
+    .month-accordion.collapsed .chevron { transform: rotate(-90deg); }
+    .month-body { padding: 16px 18px 8px; border-top: 1px solid var(--border); }
+    .month-accordion.collapsed .month-body { display: none; }
+
+    .subject-group { margin-bottom: 20px; }
+    .subject-title { font-size: 15px; font-weight: 600; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .assign-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .assign-topic { font-size: 12px; color: #38bdf8; font-weight: 500; }
+    .assign-title { font-size: 15px; font-weight: 600; margin: 4px 0; }
+    .assign-desc { font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
+    .assign-meta { font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .pill { background: rgba(52, 211, 153, 0.12); color: var(--accent); padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+
+    /* Grid Form */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+    .form-group { margin-bottom: 14px; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 500; background: rgba(15, 23, 42, 0.6); }
+
+    /* Modal & Toast */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); display: none; place-items: center; padding: 16px; z-index: 50; }
+    .modal-backdrop.open { display: grid; }
+    .modal { background: var(--card); border: 1px solid var(--border); border-radius: 16px; width: 100%; max-width: 480px; padding: 22px; }
+    .modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .modal-head h3 { margin: 0; font-size: 18px; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #f8fafc; color: #0f172a; padding: 10px 20px; border-radius: 99px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 25px rgba(0,0,0,0.4); z-index: 100; display: none; }
+  </style>
 </head>
 <body>
-<div class="shell">
-<header class="top"><div class="brand"><div class="logo">✦</div><div><h1>ASSIGNMENT HUB</h1><small>NURSING STUDENT WORKSPACE</small></div></div><div class="top-actions"><span class="pill" id="connection">● กำลังตรวจสอบ</span><button class="btn secondary" id="adminOpen">⚙ เข้าสู่ระบบแอดมิน</button></div></header>
-<section class="hero"><div><div class="eyebrow">STUDENT TRACKER / 2026</div><h2>ส่งงานให้ครบ<br>เห็นสถานะได้ในพริบตา</h2><p>พื้นที่ติดตามการบ้านรายวิชา สำหรับนักศึกษาพยาบาลทุกคน</p></div><div class="hero-tag">✦ เรียบง่าย · ชัดเจน · ตรวจสอบได้</div></section>
-<section class="stats" id="publicStats"><div class="stat"><div class="stat-label">รายวิชา</div><div class="stat-value" id="statSubjects">—</div><div class="stat-note">วิชาที่มีการบ้าน</div></div><div class="stat"><div class="stat-label">การบ้านทั้งหมด</div><div class="stat-value" id="statAssignments">—</div><div class="stat-note">ทุกวิชา / ทุกหัวข้อ</div></div><div class="stat"><div class="stat-label">รายการที่ส่งแล้ว</div><div class="stat-value" id="statDone">—</div><div class="stat-note">จำนวนการส่งรวม</div></div></section>
-<div class="tabs"><button class="tab active" data-view="overview">รายการการบ้าน</button><button class="tab" data-view="propose">เสนอการบ้าน</button><button class="tab admin-only hidden" data-view="adminOverview">ภาพรวมรายบุคคล</button><button class="tab admin-only hidden" data-view="admin">จัดการการบ้าน</button><button class="tab admin-only hidden" data-view="approvals">อนุมัติงาน</button></div>
-<section class="view active" id="view-overview"><div class="panel"><div class="panel-head"><div><h3>รายการการบ้านแยกตามรายวิชา</h3><div class="sub">ทุกคนดูได้เฉพาะจำนวนผู้ส่งของแต่ละงาน</div></div></div><div class="controls"><select id="subjectFilter"><option value="">ทุกวิชา</option></select><input id="search" placeholder="ค้นหาชื่อการบ้านหรือหัวข้อ…"></div><div id="assignmentList"></div></div></section>
-<section class="view" id="view-propose"><div class="layout"><div class="panel"><h3>เสนอการบ้านใหม่</h3><p class="sub">กรอกข้อมูลการบ้านที่ต้องการเสนอ รายการจะรอแอดมินตรวจสอบก่อนเผยแพร่</p><div class="notice">กรุณาระบุชื่อวิชา หัวข้อ และรายละเอียดให้ชัดเจน การส่งแบบฟอร์มนี้ยังไม่ถือว่าเป็นการเพิ่มการบ้านในระบบ</div><form id="proposalForm"><div class="form-grid"><div class="field"><label>รายวิชา *</label><input id="pSubject" required placeholder="เช่น การพยาบาลผู้ใหญ่"></div><div class="field"><label>หัวข้อใหญ่</label><input id="pTopic" placeholder="เช่น ระบบหัวใจและหลอดเลือด"></div></div><div class="field"><label>ชื่อการบ้าน *</label><input id="pTitle" required placeholder="เช่น ใบงานที่ 2"></div><div class="field"><label>รายละเอียด</label><textarea id="pDescription" placeholder="รายละเอียด / เงื่อนไขการส่ง"></textarea></div><div class="form-grid"><div class="field"><label>กำหนดส่ง</label><input id="pDue" type="date"></div><div class="field"><label>ความสำคัญ</label><select id="pPriority"><option value="normal">ปกติ</option><option value="urgent">เร่งด่วน</option><option value="critical">เร่งด่วนมาก</option></select></div></div><div class="field"><label>ชื่อผู้เสนอ (ไม่บังคับ)</label><input id="pSubmitter" placeholder="ชื่อ-นามสกุล"></div><button class="btn" type="submit">ส่งเสนอการบ้าน</button></form></div><aside class="panel"><h3>ขั้นตอนการเสนอ</h3><div class="notice">1. กรอกข้อมูลการบ้าน<br>2. กดส่งเสนอการบ้าน<br>3. แอดมินตรวจสอบและอนุมัติ<br>4. เมื่ออนุมัติ การบ้านจะแสดงในหน้ารายการการบ้าน</div></aside></div></section>
-<section class="view admin-only hidden" id="view-adminOverview"><div class="panel"><div class="panel-head"><div><h3>ภาพรวมการส่งงานรายบุคคล</h3><div class="sub">ข้อมูลส่วนนี้แสดงเฉพาะบัญชีผู้ดูแลระบบ</div></div><button class="btn secondary" id="exportBtn">ส่งออก CSV</button></div><div class="controls"><input id="personSearch" placeholder="ค้นหาชื่อนักศึกษา…"><select id="personSubject"><option value="">ทุกวิชา</option></select></div><div class="table-wrap"><table class="table"><thead><tr><th>นักศึกษา</th><th>การบ้าน</th><th>สถานะ</th><th>วิชา</th></tr></thead><tbody id="peopleTable"></tbody></table></div></div></section>
-<section class="view admin-only hidden" id="view-admin"><div class="layout"><div class="panel"><div class="panel-head"><div><h3>จัดการการบ้าน</h3><div class="sub">เพิ่ม แก้ไข หรือลบรายการการบ้าน</div></div><button class="btn" id="addOpen">＋ เพิ่มการบ้าน</button></div><div id="adminAssignments"></div></div><aside class="panel"><h3>บัญชีผู้ดูแล</h3><div class="notice">ระบบตรวจสอบสิทธิ์กับ Google Apps Script โดยใช้อีเมลผู้ดูแลที่กำหนดไว้ การซ่อนเมนูบนหน้าเว็บไม่ใช่มาตรการรักษาความปลอดภัยแทนการตรวจสอบฝั่งเซิร์ฟเวอร์</div><div id="adminStatus" class="sub">ยืนยันสิทธิ์แล้ว</div></aside></div></section>
-<section class="view admin-only hidden" id="view-approvals"><div class="panel"><div class="panel-head"><div><h3>รายการเสนอการบ้าน</h3><div class="sub">ตรวจสอบก่อนอนุมัติให้เผยแพร่</div></div></div><div id="proposalList"></div></div></section>
-<div class="footer">NURSING ASSIGNMENT HUB · ระบบต้องเชื่อมต่อ Google Apps Script เพื่อบันทึกและแสดงข้อมูลจริง</div>
-</div>
-<div class="modal" id="assignmentModal"><div class="modal-card"><div class="modal-head"><h3 id="modalTitle">เพิ่มการบ้าน</h3><button class="close" data-close="assignmentModal">✕</button></div><form id="assignmentForm"><input type="hidden" id="editId"><div class="form-grid"><div class="field"><label>รายวิชา *</label><input id="fSubject" required></div><div class="field"><label>หัวเรื่องใหญ่</label><input id="fTopic"></div></div><div class="field"><label>ชื่อการบ้าน *</label><input id="fTitle" required></div><div class="field"><label>คำอธิบาย</label><textarea id="fDescription"></textarea></div><div class="form-grid"><div class="field"><label>กำหนดส่ง</label><input id="fDue" type="date"></div><div class="field"><label>ความสำคัญ</label><select id="fPriority"><option value="normal">ปกติ</option><option value="urgent">เร่งด่วน</option><option value="critical">เร่งด่วนมาก</option></select></div></div><div style="display:flex;justify-content:flex-end;gap:9px"><button type="button" class="btn secondary" data-close="assignmentModal">ยกเลิก</button><button class="btn" type="submit">บันทึกการบ้าน</button></div></form></div></div>
-<div class="modal" id="adminModal"><div class="modal-card"><div class="modal-head"><h3>เข้าสู่ระบบผู้ดูแล</h3><button class="close" data-close="adminModal">✕</button></div><div class="field"><label>Google Apps Script Web App URL</label><input id="apiUrl" placeholder="https://script.google.com/macros/s/.../exec"></div><div class="field"><label>อีเมล Google ของผู้ดูแล</label><input id="userEmail" type="email" placeholder="name@example.com"></div><div class="notice">กรุณาใช้อีเมล Google ที่ได้รับสิทธิ์ผู้ดูแลระบบ ระบบจะตรวจสอบสิทธิ์ผ่าน Google Apps Script โดยอัตโนมัติ</div><button class="btn" id="saveConfig">บันทึกและตรวจสอบสิทธิ์</button></div></div>
-<div class="toast" id="toast"></div>
-<script>
-const DEFAULT_API_URL="https://script.google.com/macros/s/AKfycbwVEKzJzCNV4mCyaGTv7nCOWoF9lvDpe6NiJIoU8XhYNQBZGXBJ6qVPJ09Dp9mYBuG0xw/exec";
-let students=[],assignments=[],statuses={},submissionCounts={},proposals=[],apiUrl=DEFAULT_API_URL,userEmail="",isAdmin=false;
-const $=id=>document.getElementById(id),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const priorityName={normal:"ปกติ",urgent:"เร่งด่วน",critical:"เร่งด่วนมาก"};
-function toast(s){$("toast").textContent=s;$("toast").style.display="block";setTimeout(()=>$("toast").style.display="none",2600)}
-function callApi(action,payload={}){if(!apiUrl) return Promise.reject(Error("ยังไม่ได้ตั้งค่า Web App URL"));return fetch(apiUrl,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,...payload,userEmail})}).then(r=>r.json()).then(d=>{if(!d.ok)throw Error(d.error||"API error");return d})}
-function subjects(){return [...new Set(assignments.map(a=>a.subject))]}
-function countFor(a){if(isAdmin&&students.length)return students.filter(s=>statuses[a.id+"|"+s]==="submitted").length;return Number(submissionCounts[a.id]??a.submittedCount??0)}
-function priorityClass(p){return ["normal","urgent","critical"].includes(p)?p:"normal"}
-function render(){let sub=$("subjectFilter").value,q=$("search").value.toLowerCase();$("statSubjects").textContent=subjects().length;$("statAssignments").textContent=assignments.length;$("statDone").textContent=assignments.reduce((n,a)=>n+countFor(a),0);
-$("subjectFilter").innerHTML='<option value="">ทุกวิชา</option>'+subjects().map(s=>`<option value="${esc(s)}" ${s===sub?"selected":""}>${esc(s)}</option>`).join("");
-let filtered=assignments.filter(a=>(!sub||a.subject===sub)&&(`${a.subject} ${a.topic||""} ${a.title}`.toLowerCase().includes(q)));
-let groups={};filtered.forEach(a=>(groups[a.subject]??=[]).push(a));
-$("assignmentList").innerHTML=Object.keys(groups).length?Object.entries(groups).map(([subject,items])=>`<section class="subject-group"><h3 class="subject-heading">${esc(subject)}</h3>${items.map(a=>{let n=countFor(a),pct=students.length?Math.round(n/students.length*100):0;return `<article class="assignment"><div class="assignment-top"><div><div class="subject">${esc(a.topic||"การบ้านประจำวิชา")}</div><h4>${esc(a.title)}</h4>${a.due?`<div class="due">กำหนดส่ง: ${esc(a.due)}</div>`:""}</div><span class="priority ${priorityClass(a.priority)}">${priorityName[priorityClass(a.priority)]}</span></div><p>${esc(a.description||"ไม่มีคำอธิบายเพิ่มเติม")}</p><div class="assignment-foot"><div class="status-count"><b>${n}</b> คนส่งแล้ว</div>${isAdmin?`<span class="sub">จากนักศึกษา ${students.length} คน</span>`:""}</div>${isAdmin?`<div class="progress"><span style="width:${pct}%"></span></div>`:""}</article>`}).join("")}</section>`).join(""):'<div class="empty">ไม่พบรายการการบ้าน</div>';
-renderAdminAssignments();if(isAdmin){renderPeople();renderProposals()}}
-function renderAdminAssignments(){$("adminAssignments").innerHTML=assignments.map(a=>`<div class="assignment"><div class="assignment-top"><div><div class="subject">${esc(a.subject)} / ${esc(a.topic||"")}</div><h4>${esc(a.title)}</h4></div><span class="priority ${priorityClass(a.priority)}">${priorityName[priorityClass(a.priority)]}</span></div><p>${esc(a.description||"—")}</p><div class="due">กำหนดส่ง: ${esc(a.due||"ไม่ระบุ")}</div><button class="btn secondary" onclick="editAssignment('${esc(a.id)}')">แก้ไข</button> <button class="btn danger" onclick="deleteAssignment('${esc(a.id)}')">ลบ</button></div>`).join("")||'<div class="empty">ยังไม่มีการบ้าน</div>'}
-function renderPeople(){let q=$("personSearch").value.toLowerCase(),sub=$("personSubject").value;let rows=[];students.filter(s=>s.toLowerCase().includes(q)).forEach(s=>assignments.filter(a=>!sub||a.subject===sub).forEach(a=>rows.push(`<tr><td>${esc(s)}</td><td>${esc(a.title)}</td><td>${statuses[a.id+"|"+s]==="submitted"?"ส่งแล้ว":"ยังไม่ส่ง"}</td><td>${esc(a.subject)}</td></tr>`)));$("peopleTable").innerHTML=rows.join("")||'<tr><td colspan="4">ไม่มีข้อมูล</td></tr>';$("personSubject").innerHTML='<option value="">ทุกวิชา</option>'+subjects().map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("")}
-function renderProposals(){$("proposalList").innerHTML=proposals.filter(p=>p.status!=="rejected"&&p.status!=="approved").map(p=>`<article class="proposal"><div class="assignment-top"><div><div class="subject">${esc(p.subject)} / ${esc(p.topic||"")}</div><h4>${esc(p.title)}</h4></div><span class="tag pending">รออนุมัติ</span></div><p>${esc(p.description||"ไม่มีรายละเอียด")}<br>กำหนดส่ง: ${esc(p.due||"ไม่ระบุ")} · ความสำคัญ: ${priorityName[priorityClass(p.priority)]}<br>ผู้เสนอ: ${esc(p.submitter||"ไม่ระบุ")}</p><div class="proposal-actions"><button class="btn" onclick="reviewProposal('${esc(p.id)}','approve')">อนุมัติ</button><button class="btn danger" onclick="reviewProposal('${esc(p.id)}','reject')">ปฏิเสธ</button></div></article>`).join("")||'<div class="empty">ไม่มีรายการรออนุมัติ</div>'}
-function showAdmin(on){isAdmin=!!on;document.querySelectorAll(".admin-only").forEach(x=>x.classList.toggle("hidden",!isAdmin));$("adminOpen").textContent=isAdmin?"✓ แอดมิน":"⚙ เข้าสู่ระบบแอดมิน";$("adminStatus").textContent=isAdmin?"ยืนยันสิทธิ์ผู้ดูแลแล้ว":"ไม่มีสิทธิ์ผู้ดูแล";render()}
-function setView(name){document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.dataset.view===name));document.querySelectorAll(".view").forEach(x=>x.classList.toggle("active",x.id==="view-"+name))}
-function connect(){if(!apiUrl){$("connection").textContent="● โหมดออฟไลน์";return}callApi("checkAdmin").then(d=>{showAdmin(!!d.isAdmin);return callApi("getData")}).then(d=>{assignments=d.assignments||[];submissionCounts=d.submissionCounts||d.counts||{};if(isAdmin){students=d.students||[];statuses=d.statuses||{};proposals=d.proposals||[]}$("connection").textContent="● เชื่อมต่อแล้ว";$("connection").style.color="var(--mint)";render()}).catch(e=>{$("connection").textContent="● เชื่อมต่อไม่สำเร็จ";showAdmin(false);toast("เชื่อมต่อไม่สำเร็จ: "+e.message)})}
-function editAssignment(id){let a=assignments.find(x=>x.id===id);if(!a)return;$("modalTitle").textContent="แก้ไขการบ้าน";$("editId").value=id;$("fSubject").value=a.subject;$("fTopic").value=a.topic||"";$("fTitle").value=a.title;$("fDescription").value=a.description||"";$("fDue").value=a.due||"";$("fPriority").value=priorityClass(a.priority);openModal("assignmentModal")}
-function deleteAssignment(id){if(!isAdmin)return;if(!confirm("ยืนยันลบการบ้านนี้?"))return;callApi("deleteAssignment",{assignmentId:id}).then(()=>{assignments=assignments.filter(a=>a.id!==id);render();toast("ลบการบ้านแล้ว")}).catch(e=>toast(e.message))}
-function reviewProposal(id,decision){if(!isAdmin)return;let p=proposals.find(x=>String(x.id)===String(id));if(!p)return;if(!confirm(decision==="approve"?"ยืนยันอนุมัติการบ้านนี้?":"ยืนยันปฏิเสธข้อเสนอนี้?"))return;callApi("reviewProposal",{proposalId:id,decision,proposalStatus:decision==="approve"?"approved":"rejected"}).then(()=>{proposals=proposals.map(x=>String(x.id)===String(id)?{...x,status:decision==="approve"?"approved":"rejected"}:x);if(decision==="approve"&&p.assignment)assignments.unshift(p.assignment);render();toast(decision==="approve"?"อนุมัติการบ้านแล้ว":"ปฏิเสธข้อเสนอแล้ว")}).catch(e=>toast(e.message))}
-function openModal(id){$(id).classList.add("open")}function closeModal(id){$(id).classList.remove("open")}
-document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>setView(b.dataset.view));
-$("subjectFilter").onchange=render;$("search").oninput=render;$("personSearch").oninput=renderPeople;$("personSubject").onchange=renderPeople;
-$("adminOpen").onclick=()=>openModal("adminModal");$("addOpen").onclick=()=>{if(!isAdmin)return toast("ไม่มีสิทธิ์ผู้ดูแล");$("modalTitle").textContent="เพิ่มการบ้าน";$("assignmentForm").reset();$("editId").value="";openModal("assignmentModal")};
-document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>closeModal(b.dataset.close));
-$("saveConfig").onclick=()=>{apiUrl=$("apiUrl").value.trim();userEmail=$("userEmail").value.trim().toLowerCase();localStorage.setItem("assignmentApiUrl",apiUrl);localStorage.setItem("assignmentUserEmail",userEmail);if(!apiUrl||!userEmail){toast("กรุณากรอก Web App URL และอีเมล Google");return}closeModal("adminModal");connect()};
-$("assignmentForm").onsubmit=e=>{e.preventDefault();if(!isAdmin)return toast("ไม่มีสิทธิ์จัดการการบ้าน");let a={id:$("editId").value||"a"+Date.now(),subject:$("fSubject").value.trim(),topic:$("fTopic").value.trim(),title:$("fTitle").value.trim(),description:$("fDescription").value.trim(),due:$("fDue").value,priority:$("fPriority").value};let action=$("editId").value?"updateAssignment":"addAssignment";callApi(action,{assignment:a}).then(()=>{if(action==="addAssignment")assignments.unshift(a);else assignments=assignments.map(x=>x.id===a.id?a:x);closeModal("assignmentModal");render();toast("บันทึกการบ้านแล้ว")}).catch(e=>toast(e.message))};
-$("proposalForm").onsubmit=e=>{e.preventDefault();let p={id:"p"+Date.now(),subject:$("pSubject").value.trim(),topic:$("pTopic").value.trim(),title:$("pTitle").value.trim(),description:$("pDescription").value.trim(),due:$("pDue").value,priority:$("pPriority").value,submitter:$("pSubmitter").value.trim(),status:"pending"};callApi("submitProposal",{proposal:p}).then(()=>{$("proposalForm").reset();toast("ส่งข้อเสนอแล้ว รอแอดมินอนุมัติ")}).catch(err=>toast("ส่งไม่สำเร็จ: "+err.message))};
-$("exportBtn").onclick=()=>{if(!isAdmin)return;let rows=[["นักศึกษา","การบ้าน","สถานะ","วิชา"],...students.flatMap(s=>assignments.map(a=>[s,a.title,statuses[a.id+"|"+s]==="submitted"?"ส่งแล้ว":"ยังไม่ส่ง",a.subject]))];let csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(",")).join("\r\n");let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="assignment-status.csv";a.click();URL.revokeObjectURL(url)};
-apiUrl=localStorage.getItem("assignmentApiUrl")||DEFAULT_API_URL;userEmail=localStorage.getItem("assignmentUserEmail")||"";$("apiUrl").value=apiUrl;$("userEmail").value=userEmail;connect();
-</script>
-</body></html>
+  <div class="container">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">✦</div>
+        <div>
+          <div class="brand-title">ASSIGNMENT HUB</div>
+          <div class="brand-sub">NURSING STUDENT WORKSPACE</div>
+        </div>
+      </div>
+      <div class="status-group">
+        <div class="badge-status">
+          <span class="dot" id="connDot"></span>
+          <span id="connText">กำลังเชื่อมต่อ...</span>
+        </div>
+        <button class="btn btn-primary btn-sm" id="loginBtn">⚙ เข้าสู่ระบบ</button>
+      </div>
+    </div>
+
+    <!-- โปรไฟล์ส่วนตัว -->
+    <div class="profile-banner" id="profileBanner" style="display:none;">
+      <div class="profile-info">
+        <div class="avatar" id="profileAvatar">U</div>
+        <div>
+          <div style="font-weight:700; font-size:16px;">
+            <span id="profileNameDisplay">ยังไม่ได้ผูกชื่อ-สกุล</span>
+            <span class="role-tag" id="profileRoleTag">นักศึกษา</span>
+          </div>
+          <div style="font-size:13px; color:var(--muted);" id="profileEmailDisplay"></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-sm" id="editProfileBtn">✎ ตั้งค่า / แก้ไขชื่อโปรไฟล์</button>
+        <button class="btn btn-sm btn-danger" id="logoutBtn">ออกจากระบบ</button>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-tag">STUDENT TRACKER / 2026</div>
+      <h1>ส่งงานให้ครบ เห็นสถานะได้ในพริบตา</h1>
+      <p>เข้าสู่ระบบด้วยอีเมล ผูกชื่อ-สกุลของคุณ แล้วกดยืนยันเสร็จงานได้ทันที</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">รายวิชา</div>
+        <div class="stat-val" id="statSubjects">—</div>
+        <div class="stat-sub">วิชาที่มีการบ้าน</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">การบ้านทั้งหมด</div>
+        <div class="stat-val" id="statAssignments">—</div>
+        <div class="stat-sub">ทุกวิชา / ทุกหัวข้อ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">รายการที่ส่งแล้ว</div>
+        <div class="stat-val" id="statSubmissions">—</div>
+        <div class="stat-sub">จำนวนการส่งรวม</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="list">รายการการบ้าน</button>
+      <button class="tab" data-tab="propose">เสนอการบ้าน</button>
+      <button class="tab hidden admin-only" data-tab="overview">ภาพรวมรายบุคคล</button>
+      <button class="tab hidden admin-only" data-tab="manage">จัดการการบ้าน</button>
+      <button class="tab hidden admin-only" data-tab="approve">อนุมัติงาน <span id="propCountBadge"></span></button>
+    </div>
+
+    <!-- Tab 1: รายการการบ้าน (แยกตามเดือน + ย่อ/ขยายได้) -->
+    <div class="section active" id="tab-list">
+      <div class="panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
+          <div>
+            <h3 style="margin:0;">รายการการบ้านแยกตามเดือน</h3>
+            <small style="color:var(--muted);">แสดงเฉพาะเดือนล่าสุดเป็นค่าเริ่มต้น คลิกที่แถบเดือนเพื่อย่อหรือขยายดูเดือนอื่นได้</small>
+          </div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn btn-sm" onclick="toggleAllMonths(false)">ขยายทั้งหมด</button>
+            <button class="btn btn-sm" onclick="toggleAllMonths(true)">ย่อทั้งหมด</button>
+            <button class="btn btn-sm" onclick="connect()">↻ รีเฟรช</button>
+          </div>
+        </div>
+        <div class="filter-bar">
+          <select id="filterSubject"><option value="">ทุกวิชา</option></select>
+          <input type="text" id="searchBox" placeholder="ค้นหาชื่อการบ้านหรือหัวข้อ..." />
+        </div>
+        <div id="assignmentListContainer">กำลังโหลดข้อมูล...</div>
+      </div>
+    </div>
+
+    <!-- Tab 2: เสนอการบ้าน -->
+    <div class="section" id="tab-propose">
+      <div class="panel">
+        <h3 style="margin-top:0;">เสนอการบ้านใหม่</h3>
+        <p style="color:var(--muted); font-size:13px;">กรอกข้อมูลการบ้านที่ต้องการเสนอ รายการจะรอแอดมินตรวจสอบก่อนเผยแพร่</p>
+        <form id="proposalForm">
+          <div class="grid-2">
+            <div>
+              <label>รายวิชา *</label>
+              <input type="text" id="pSubject" required placeholder="เช่น การพยาบาลผู้ใหญ่และผู้สูงอายุ" />
+            </div>
+            <div>
+              <label>หัวข้อใหญ่</label>
+              <input type="text" id="pTopic" placeholder="เช่น ระบบหัวใจและหลอดเลือด" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>ชื่อการบ้าน *</label>
+            <input type="text" id="pTitle" required placeholder="ระบุชื่องานที่ได้รับมอบหมาย" />
+          </div>
+          <div class="form-group">
+            <label>รายละเอียด</label>
+            <textarea id="pDescription" rows="3" placeholder="คำอธิบายเพิ่มเติม รูปแบบไฟล์ หรือช่องทางการส่ง"></textarea>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label>กำหนดส่ง</label>
+              <input type="date" id="pDue" />
+            </div>
+            <div>
+              <label>ความสำคัญ</label>
+              <select id="pPriority">
+                <option value="ปกติ">ปกติ</option>
+                <option value="เร่งด่วน">เร่งด่วน</option>
+                <option value="เร่งด่วนมาก">เร่งด่วนมาก</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>ชื่อผู้เสนอ (ไม่บังคับ)</label>
+            <input type="text" id="pSubmitter" placeholder="ระบุชื่อหรืออีเมลของคุณ" />
+          </div>
+          <button type="submit" class="btn btn-primary">ส่งเสนอการบ้าน</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Tab 3: ภาพรวมรายบุคคล (Admin Only) -->
+    <div class="section" id="tab-overview">
+      <div class="panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:16px;">
+          <div>
+            <h3 style="margin:0;">ภาพรวมการส่งงานรายบุคคล</h3>
+            <small style="color:var(--muted);">ตรวจสอบรายชื่อ อีเมลผู้กดยืนยัน และจัดการสถานะการส่ง</small>
+          </div>
+          <button class="btn btn-sm" id="exportBtn">📥 ส่งออก CSV</button>
+        </div>
+        <div class="filter-bar">
+          <select id="ovFilterSubject"><option value="">ทุกวิชา</option></select>
+          <input type="text" id="ovSearch" placeholder="ค้นหาชื่อนักศึกษา หรือชื่อการบ้าน..." />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>นักศึกษา</th>
+                <th>วิชา / การบ้าน</th>
+                <th>สถานะ</th>
+                <th>อีเมลผู้ยืนยัน</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody id="overviewTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: จัดการการบ้าน (Admin Only) -->
+    <div class="section" id="tab-manage">
+      <div class="panel">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <h3 style="margin:0;">จัดการการบ้าน</h3>
+            <small style="color:var(--muted);">เพิ่ม แก้ไข หรือลบรายการการบ้านได้ทันทีโดยไม่ต้องรออนุมัติ</small>
+          </div>
+          <button class="btn btn-primary" id="openAddAssignBtn">＋ เพิ่มการบ้าน</button>
+        </div>
+        <div id="manageListContainer"></div>
+      </div>
+    </div>
+
+    <!-- Tab 5: อนุมัติงาน (Admin Only) -->
+    <div class="section" id="tab-approve">
+      <div class="panel">
+        <h3 style="margin-top:0;">รายการเสนอการบ้านที่รออนุมัติ</h3>
+        <div id="proposalListContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: เข้าสู่ระบบ -->
+  <div class="modal-backdrop" id="loginModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>เข้าสู่ระบบ</h3>
+        <button class="btn btn-sm" onclick="closeModal('loginModal')">✕</button>
+      </div>
+      <div class="form-group">
+        <label>อีเมลของคุณ (ใช้ได้ทุกอีเมล เพื่อผูกกับชื่อโปรไฟล์)</label>
+        <input type="email" id="userEmailInput" placeholder="example@gmail.com" />
+      </div>
+      <div class="form-group">
+        <label>Google Apps Script Web App URL</label>
+        <input type="text" id="apiUrlInput" />
+      </div>
+      <button class="btn btn-primary" style="width:100%; justify-content:center;" id="saveLoginBtn">เข้าสู่ระบบ</button>
+    </div>
+  </div>
+
+  <!-- Modal: ตั้งค่า / แก้ไขชื่อโปรไฟล์ -->
+  <div class="modal-backdrop" id="profileModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>ตั้งค่า / แก้ไขชื่อโปรไฟล์</h3>
+        <button class="btn btn-sm" onclick="closeModal('profileModal')">✕</button>
+      </div>
+      <p style="font-size:13px; color:var(--muted); margin-top:0;">เลือกชื่อ-สกุลของคุณเพื่อผูกกับอีเมล <strong id="modalProfileEmail" style="color:var(--text);"></strong></p>
+      <div class="form-group">
+        <label>เลือกชื่อ-สกุลของคุณ *</label>
+        <select id="profileStudentSelect"></select>
+      </div>
+      <button class="btn btn-primary" style="width:100%; justify-content:center;" id="saveProfileBtn">บันทึกข้อมูลโปรไฟล์</button>
+    </div>
+  </div>
+
+  <!-- Modal: เพิ่ม/แก้ไขการบ้าน -->
+  <div class="modal-backdrop" id="assignmentModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 id="assignModalTitle">เพิ่มการบ้าน</h3>
+        <button class="btn btn-sm" onclick="closeModal('assignmentModal')">✕</button>
+      </div>
+      <form id="assignmentForm">
+        <input type="hidden" id="editId" />
+        <div class="form-group">
+          <label>รายวิชา *</label>
+          <input type="text" id="fSubject" required />
+        </div>
+        <div class="form-group">
+          <label>หัวเรื่องใหญ่</label>
+          <input type="text" id="fTopic" />
+        </div>
+        <div class="form-group">
+          <label>ชื่อการบ้าน *</label>
+          <input type="text" id="fTitle" required />
+        </div>
+        <div class="form-group">
+          <label>คำอธิบาย</label>
+          <textarea id="fDescription" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>กำหนดส่ง</label>
+          <input type="date" id="fDue" />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">บันทึกการบ้าน</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const DEFAULT_API_URL = "https://script.google.com/macros/s/AKfycbxAj-vobfbGiC2_WCDMIK4KG_zo5vaighcWvnyDvkSoJSnKGxnaVK2PwTjw_HpBkVwNvQ/exec";
+    
+    let apiUrl = localStorage.getItem("assignmentApiUrl") || DEFAULT_API_URL;
+    let userEmail = localStorage.getItem("assignmentUserEmail") || "";
+    let linkedName = localStorage.getItem("assignmentLinkedName") || "";
+    let isAdmin = false;
+    let students = [];
+    let assignments = [];
+    let statuses = {};
+    let submissionDetails = {};
+    let proposals = [];
+    let collapsedMonths = {}; // เก็บสถานะย่อ/ขยายของแต่ละเดือน
+    let isFirstMonthInit = true;
+
+    const THAI_MONTHS = [
+      "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+      "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+    ];
+
+    const $ = id => document.getElementById(id);
+
+    function toast(msg) {
+      const el = $("toast");
+      el.textContent = msg;
+      el.style.display = "block";
+      clearTimeout(el._t);
+      el._t = setTimeout(() => el.style.display = "none", 3500);
+    }
+
+    function openModal(id) { $(id).classList.add("open"); }
+    function closeModal(id) { $(id).classList.remove("open"); }
+
+    function callApi(action, params = {}) {
+      return new Promise((resolve, reject) => {
+        if (!apiUrl) return reject(new Error("กรุณาระบุ Web App URL"));
+        const cbName = "cb_" + Date.now() + "_" + Math.floor(Math.random() * 10000);
+        const query = new URLSearchParams({ action, email: userEmail, callback: cbName, ...params });
+        const script = document.createElement("script");
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("หมดเวลาการเชื่อมต่อ (Timeout)"));
+        }, 15000);
+
+        function cleanup() {
+          clearTimeout(timer);
+          delete window[cbName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+        }
+
+        window[cbName] = (res) => {
+          cleanup();
+          if (res && res.ok) resolve(res);
+          else reject(new Error((res && res.error) || "เกิดข้อผิดพลาดจากเซิร์ฟเวอร์"));
+        };
+
+        script.onerror = () => {
+          cleanup();
+          reject(new Error("ไม่สามารถเชื่อมต่อ URL ของ Google Apps Script ได้"));
+        };
+
+        script.src = apiUrl + (apiUrl.includes("?") ? "&" : "?") + query.toString();
+        document.body.appendChild(script);
+      });
+    }
+
+    async function connect() {
+      $("connDot").className = "dot";
+      $("connText").textContent = "กำลังโหลดข้อมูล...";
+      try {
+        const data = await callApi("getData");
+        students = data.students || [];
+        assignments = data.assignments || [];
+        statuses = data.statuses || {};
+        submissionDetails = data.submissionDetails || {};
+        proposals = data.proposals || [];
+        isAdmin = !!data.isAdmin;
+
+        if (data.linkedName) {
+          linkedName = data.linkedName;
+          localStorage.setItem("assignmentLinkedName", linkedName);
+        }
+
+        $("connDot").className = "dot ok";
+        if (userEmail) {
+          $("connText").textContent = "เชื่อมต่อแล้ว";
+          $("loginBtn").textContent = "⚙ เปลี่ยนบัญชี";
+          $("profileBanner").style.display = "flex";
+          $("profileEmailDisplay").textContent = userEmail;
+          $("profileNameDisplay").textContent = linkedName || "ยังไม่ได้ผูกชื่อ-สกุล (กดปุ่มด้านขวาเพื่อตั้งค่า)";
+          $("profileAvatar").textContent = (linkedName || userEmail)[0].toUpperCase();
+          $("profileRoleTag").textContent = isAdmin ? "แอดมิน (Admin)" : "นักศึกษา";
+        } else {
+          $("connText").textContent = "ยังไม่เข้าสู่ระบบ";
+          $("loginBtn").textContent = "⚙ เข้าสู่ระบบ";
+          $("profileBanner").style.display = "none";
+        }
+
+        updateRoleUI();
+        renderAll();
+      } catch (err) {
+        $("connDot").className = "dot err";
+        $("connText").textContent = "เชื่อมต่อไม่สำเร็จ";
+        toast(err.message);
+      }
+    }
+
+    function updateRoleUI() {
+      document.querySelectorAll(".admin-only").forEach(el => {
+        if (isAdmin) el.classList.remove("hidden");
+        else el.classList.add("hidden");
+      });
+      if (!isAdmin) {
+        const activeTab = document.querySelector(".tab.active");
+        if (activeTab && activeTab.classList.contains("admin-only")) {
+          switchTab("list");
+        }
+      }
+    }
+
+    function switchTab(tabName) {
+      document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.tab === tabName));
+      document.querySelectorAll(".section").forEach(s => s.classList.toggle("active", s.id === "tab-" + tabName));
+    }
+
+    document.querySelectorAll(".tab").forEach(btn => {
+      btn.onclick = () => switchTab(btn.dataset.tab);
+    });
+
+    function renderAll() {
+      const subjects = [...new Set(assignments.map(a => a.subject).filter(Boolean))];
+      const submittedCount = Object.values(statuses).filter(s => s === "submitted").length;
+      $("statSubjects").textContent = subjects.length;
+      $("statAssignments").textContent = assignments.length;
+      $("statSubmissions").textContent = submittedCount;
+      $("propCountBadge").textContent = proposals.length ? `(${proposals.length})` : "";
+
+      const subOptions = `<option value="">ทุกวิชา</option>` + subjects.map(s => `<option value="${s}">${s}</option>`).join("");
+      const curFilter = $("filterSubject").value;
+      $("filterSubject").innerHTML = subOptions;
+      $("filterSubject").value = curFilter;
+
+      const curOvFilter = $("ovFilterSubject").value;
+      $("ovFilterSubject").innerHTML = subOptions;
+      $("ovFilterSubject").value = curOvFilter;
+
+      $("profileStudentSelect").innerHTML = `<option value="">-- เลือกชื่อ-สกุลของคุณ --</option>` +
+        students.map(st => `<option value="${st}" ${st === linkedName ? "selected" : ""}>${st}</option>`).join("");
+
+      renderAssignmentList();
+      if (isAdmin) {
+        renderOverviewTable();
+        renderManageList();
+        renderProposalList();
+      }
+    }
+
+    // แปลงวันที่กำหนดส่งเป็นคีย์ YYYY-MM และชื่อเดือนภาษาไทย
+    function getMonthInfo(dueStr) {
+      if (!dueStr) return { key: "0000-00", label: "ไม่ระบุกำหนดส่ง", sortVal: 0 };
+      const clean = String(dueStr).split("T")[0].trim();
+      const parts = clean.split("-");
+      if (parts.length >= 2) {
+        const year = parseInt(parts[0], 10);
+        const monthIdx = parseInt(parts[1], 10) - 1;
+        if (!isNaN(year) && monthIdx >= 0 && monthIdx < 12) {
+          const thaiYear = year < 2400 ? year + 543 : year;
+          const key = `${year}-${String(monthIdx + 1).padStart(2, "0")}`;
+          return {
+            key,
+            label: `เดือน${THAI_MONTHS[monthIdx]} ${thaiYear}`,
+            sortVal: year * 100 + (monthIdx + 1)
+          };
+        }
+      }
+      return { key: "0000-00", label: "ไม่ระบุกำหนดส่ง", sortVal: 0 };
+    }
+
+    window.toggleMonth = function(monthKey) {
+      collapsedMonths[monthKey] = !collapsedMonths[monthKey];
+      const el = document.getElementById("month-box-" + monthKey);
+      if (el) el.classList.toggle("collapsed", !!collapsedMonths[monthKey]);
+    };
+
+    window.toggleAllMonths = function(collapse) {
+      document.querySelectorAll(".month-accordion").forEach(el => {
+        const key = el.dataset.monthKey;
+        collapsedMonths[key] = collapse;
+        el.classList.toggle("collapsed", collapse);
+      });
+    };
+
+    function renderAssignmentList() {
+      const fSub = $("filterSubject").value;
+      const q = $("searchBox").value.toLowerCase().trim();
+      const filtered = assignments.filter(a => {
+        if (fSub && a.subject !== fSub) return false;
+        if (q && !(`${a.title} ${a.topic} ${a.subject}`.toLowerCase().includes(q))) return false;
+        return true;
+      });
+
+      if (!filtered.length) {
+        $("assignmentListContainer").innerHTML = `<p style="color:var(--muted); text-align:center; padding:20px;">ไม่พบรายการการบ้าน</p>`;
+        return;
+      }
+
+      // จัดกลุ่มตามเดือน
+      const monthGroups = {};
+      filtered.forEach(a => {
+        const mInfo = getMonthInfo(a.due);
+        if (!monthGroups[mInfo.key]) {
+          monthGroups[mInfo.key] = { ...mInfo, items: [] };
+        }
+        monthGroups[mInfo.key].items.push(a);
+      });
+
+      // เรียงเดือนจากล่าสุดไปเก่าสุด
+      const sortedMonths = Object.values(monthGroups).sort((a, b) => b.sortVal - a.sortVal);
+      const latestMonthKey = sortedMonths[0].key;
+
+      // ตั้งค่าเริ่มต้น: เปิดเฉพาะเดือนล่าสุด และย่อเดือนอื่นๆ ทั้งหมด
+      if (isFirstMonthInit) {
+        sortedMonths.forEach((m, index) => {
+          collapsedMonths[m.key] = index !== 0; // index 0 คือเดือนล่าสุด (false = ไม่ย่อ)
+        });
+        isFirstMonthInit = false;
+      }
+
+      let html = "";
+      sortedMonths.forEach((mGroup) => {
+        const isLatest = mGroup.key === latestMonthKey && mGroup.key !== "0000-00";
+        const isCollapsed = !!collapsedMonths[mGroup.key];
+        const totalInMonth = mGroup.items.length;
+        const myDoneInMonth = linkedName
+          ? mGroup.items.filter(a => statuses[`${a.id}|${linkedName}`] === "submitted").length
+          : 0;
+
+        // จัดกลุ่มย่อยตามรายวิชาภายในเดือนนั้น
+        const subjectGroups = {};
+        mGroup.items.forEach(a => {
+          const sub = a.subject || "ทั่วไป";
+          if (!subjectGroups[sub]) subjectGroups[sub] = [];
+          subjectGroups[sub].push(a);
+        });
+
+        let innerHtml = "";
+        for (const [sub, list] of Object.entries(subjectGroups)) {
+          innerHtml += `<div class="subject-group"><div class="subject-title">📘 ${sub}</div>`;
+          list.forEach(a => {
+            const doneCount = students.filter(st => statuses[`${a.id}|${st}`] === "submitted").length;
+            const dueText = a.due ? String(a.due).split("T")[0] : "ไม่ระบุ";
+            const isMyWorkDone = linkedName && statuses[`${a.id}|${linkedName}`] === "submitted";
+
+            let actionBtnHtml = "";
+            if (!userEmail) {
+              actionBtnHtml = `<button class="btn btn-sm" onclick="openModal('loginModal')">เข้าสู่ระบบเพื่อส่งงาน</button>`;
+            } else if (!linkedName) {
+              actionBtnHtml = `<button class="btn btn-sm" onclick="openProfileModal()">ผูกชื่อเพื่อกดส่งงาน</button>`;
+            } else if (isMyWorkDone) {
+              actionBtnHtml = `<button class="btn btn-done btn-sm" onclick="toggleMyWork('${a.id}', 'pending')">✓ เสร็จงานแล้ว (${linkedName})</button>`;
+            } else {
+              actionBtnHtml = `<button class="btn btn-primary btn-sm" onclick="toggleMyWork('${a.id}', 'submitted')">กดเสร็จงาน</button>`;
+            }
+
+            innerHtml += `
+              <div class="assign-card">
+                <div style="flex:1; min-width:240px;">
+                  <div class="assign-topic">${a.topic || "ทั่วไป"}</div>
+                  <div class="assign-title">${a.title}</div>
+                  <div class="assign-desc">${a.description || "-"}</div>
+                  <div class="assign-meta">
+                    <span>📅 กำหนดส่ง: ${dueText}</span>
+                    <span class="pill">ส่งแล้ว ${doneCount} / ${students.length} คน</span>
+                  </div>
+                </div>
+                <div>${actionBtnHtml}</div>
+              </div>`;
+          });
+          innerHtml += `</div>`;
+        }
+
+        html += `
+          <div class="month-accordion ${isCollapsed ? "collapsed" : ""}" id="month-box-${mGroup.key}" data-month-key="${mGroup.key}">
+            <div class="month-header" onclick="toggleMonth('${mGroup.key}')">
+              <div class="month-title-wrap">
+                <span class="chevron">▼</span>
+                <span class="month-title">🗓️ ${mGroup.label}</span>
+                ${isLatest ? '<span class="latest-badge">เดือนล่าสุด</span>' : ''}
+              </div>
+              <div class="month-meta">
+                ${linkedName ? `<span>คุณส่งแล้ว ${myDoneInMonth}/${totalInMonth} งาน</span> • ` : ''}
+                <span>ทั้งหมด ${totalInMonth} งาน</span>
+              </div>
+            </div>
+            <div class="month-body">
+              ${innerHtml}
+            </div>
+          </div>`;
+      });
+
+      $("assignmentListContainer").innerHTML = html;
+    }
+
+    window.toggleMyWork = async function(assignmentId, newStatus) {
+      if (!userEmail || !linkedName) return openProfileModal();
+      try {
+        await callApi("setStatus", { assignmentId, studentName: linkedName, status: newStatus });
+        statuses[`${assignmentId}|${linkedName}`] = newStatus;
+        submissionDetails[`${assignmentId}|${linkedName}`] = { status: newStatus, updatedBy: userEmail };
+        renderAll();
+        toast(newStatus === "submitted" ? `บันทึกว่า "${linkedName}" เสร็จงานแล้ว` : "ยกเลิกสถานะเสร็จงานแล้ว");
+      } catch (err) {
+        toast(err.message);
+      }
+    };
+
+    window.openProfileModal = function() {
+      if (!userEmail) return openModal("loginModal");
+      $("modalProfileEmail").textContent = userEmail;
+      $("profileStudentSelect").value = linkedName || "";
+      openModal("profileModal");
+    };
+
+    $("editProfileBtn").onclick = openProfileModal;
+
+    $("saveProfileBtn").onclick = async () => {
+      const selectedName = $("profileStudentSelect").value;
+      if (!selectedName) return toast("กรุณาเลือกชื่อ-สกุลของคุณ");
+      try {
+        $("saveProfileBtn").disabled = true;
+        await callApi("saveProfile", { studentName: selectedName });
+        linkedName = selectedName;
+        localStorage.setItem("assignmentLinkedName", linkedName);
+        closeModal("profileModal");
+        connect();
+        toast(`ผูกบัญชีกับชื่อ "${linkedName}" เรียบร้อยแล้ว`);
+      } catch (err) {
+        toast(err.message);
+      } finally {
+        $("saveProfileBtn").disabled = false;
+      }
+    };
+
+    $("logoutBtn").onclick = () => {
+      userEmail = "";
+      linkedName = "";
+      isAdmin = false;
+      localStorage.removeItem("assignmentUserEmail");
+      localStorage.removeItem("assignmentLinkedName");
+      connect();
+      toast("ออกจากระบบแล้ว");
+    };
+
+    // Admin: Overview Table
+    function renderOverviewTable() {
+      const fSub = $("ovFilterSubject").value;
+      const q = $("ovSearch").value.toLowerCase().trim();
+      let html = "";
+
+      students.forEach(st => {
+        assignments.forEach(a => {
+          if (fSub && a.subject !== fSub) return;
+          if (q && !(`${st} ${a.title} ${a.subject}`.toLowerCase().includes(q))) return;
+          const key = `${a.id}|${st}`;
+          const isDone = statuses[key] === "submitted";
+          const detail = submissionDetails[key] || {};
+          html += `
+            <tr>
+              <td><strong>${st}</strong></td>
+              <td><small style="color:var(--accent);">${a.subject}</small><br>${a.title}</td>
+              <td>${isDone ? '<span class="pill">ส่งแล้ว</span>' : '<span style="color:var(--muted);">ยังไม่ส่ง</span>'}</td>
+              <td><small style="color:var(--muted);">${detail.updatedBy || "-"}</small></td>
+              <td>
+                <button class="btn btn-sm" onclick="toggleAdminStatus('${a.id}', '${st.replace(/'/g, "\\'")}', '${isDone ? "pending" : "submitted"}')">
+                  ${isDone ? "ยกเลิกการส่ง" : "ติ๊กส่งแล้ว"}
+                </button>
+              </td>
+            </tr>`;
+        });
+      });
+      $("overviewTableBody").innerHTML = html || `<tr><td colspan="5" style="text-align:center;">ไม่มีข้อมูล</td></tr>`;
+    }
+
+    window.toggleAdminStatus = async function(assignmentId, studentName, newStatus) {
+      try {
+        await callApi("setStatus", { assignmentId, studentName, status: newStatus });
+        statuses[`${assignmentId}|${studentName}`] = newStatus;
+        submissionDetails[`${assignmentId}|${studentName}`] = { status: newStatus, updatedBy: userEmail };
+        renderAll();
+        toast("อัปเดตสถานะเรียบร้อย");
+      } catch (err) {
+        toast(err.message);
+      }
+    };
+
+    // Admin: Manage Assignments
+    function renderManageList() {
+      if (!assignments.length) {
+        $("manageListContainer").innerHTML = `<p style="color:var(--muted);">ยังไม่มีรายการการบ้าน</p>`;
+        return;
+      }
+      $("manageListContainer").innerHTML = assignments.map(a => `
+        <div class="assign-card">
+          <div>
+            <div class="assign-topic">${a.subject} • ${a.topic || "ทั่วไป"}</div>
+            <div class="assign-title">${a.title}</div>
+            <div class="assign-desc">${a.description || "-"}</div>
+            <div class="assign-meta"><span>📅 กำหนดส่ง: ${a.due ? String(a.due).split("T")[0] : "ไม่ระบุ"}</span></div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-sm" onclick="openEditAssign('${a.id}')">แก้ไข</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteAssign('${a.id}')">ลบ</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    $("openAddAssignBtn").onclick = () => {
+      $("assignModalTitle").textContent = "เพิ่มการบ้านใหม่";
+      $("assignmentForm").reset();
+      $("editId").value = "";
+      openModal("assignmentModal");
+    };
+
+    window.openEditAssign = function(id) {
+      const a = assignments.find(x => x.id === id);
+      if (!a) return;
+      $("assignModalTitle").textContent = "แก้ไขการบ้าน";
+      $("editId").value = a.id;
+      $("fSubject").value = a.subject || "";
+      $("fTopic").value = a.topic || "";
+      $("fTitle").value = a.title || "";
+      $("fDescription").value = a.description || "";
+      $("fDue").value = a.due ? String(a.due).split("T")[0] : "";
+      openModal("assignmentModal");
+    };
+
+    $("assignmentForm").onsubmit = async (e) => {
+      e.preventDefault();
+      const id = $("editId").value;
+      const action = id ? "updateAssignment" : "addAssignment";
+      try {
+        await callApi(action, {
+          id,
+          subject: $("fSubject").value.trim(),
+          topic: $("fTopic").value.trim(),
+          title: $("fTitle").value.trim(),
+          description: $("fDescription").value.trim(),
+          due: $("fDue").value
+        });
+        closeModal("assignmentModal");
+        toast("บันทึกการบ้านเรียบร้อย");
+        isFirstMonthInit = true;
+        connect();
+      } catch (err) {
+        toast(err.message);
+      }
+    };
+
+    window.deleteAssign = async function(id) {
+      if (!confirm("ยืนยันการลบการบ้านนี้?")) return;
+      try {
+        await callApi("deleteAssignment", { assignmentId: id });
+        toast("ลบการบ้านแล้ว");
+        isFirstMonthInit = true;
+        connect();
+      } catch (err) {
+        toast(err.message);
+      }
+    };
+
+    // Propose & Approve
+    $("proposalForm").onsubmit = async (e) => {
+      e.preventDefault();
+      try {
+        await callApi("proposeAssignment", {
+          subject: $("pSubject").value.trim(),
+          topic: $("pTopic").value.trim(),
+          title: $("pTitle").value.trim(),
+          description: $("pDescription").value.trim(),
+          due: $("pDue").value,
+          priority: $("pPriority").value,
+          proposer: $("pSubmitter").value.trim() || linkedName || userEmail
+        });
+        $("proposalForm").reset();
+        toast("ส่งข้อเสนอเรียบร้อย รอแอดมินอนุมัติ");
+        connect();
+      } catch (err) {
+        toast("ส่งไม่สำเร็จ: " + err.message);
+      }
+    };
+
+    function renderProposalList() {
+      if (!proposals.length) {
+        $("proposalListContainer").innerHTML = `<p style="color:var(--muted);">ไม่มีรายการเสนอการบ้านที่รออนุมัติ</p>`;
+        return;
+      }
+      $("proposalListContainer").innerHTML = proposals.map(p => `
+        <div class="assign-card">
+          <div>
+            <div class="assign-topic">${p.subject} • ความสำคัญ: ${p.priority}</div>
+            <div class="assign-title">${p.title}</div>
+            <div class="assign-desc">${p.description || "-"}</div>
+            <div class="assign-meta"><span>ผู้เสนอ: ${p.proposer || "ไม่ระบุ"}</span></div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-primary btn-sm" onclick="handleProposal('approveProposal', '${p.id}')">✓ อนุมัติ</button>
+            <button class="btn btn-danger btn-sm" onclick="handleProposal('rejectProposal', '${p.id}')">✕ ปฏิเสธ</button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    window.handleProposal = async function(action, proposalId) {
+      try {
+        await callApi(action, { proposalId });
+        toast(action === "approveProposal" ? "อนุมัติและเพิ่มการบ้านแล้ว" : "ปฏิเสธรายการแล้ว");
+        isFirstMonthInit = true;
+        connect();
+      } catch (err) {
+        toast(err.message);
+      }
+    };
+
+    // Export CSV
+    $("exportBtn").onclick = () => {
+      const rows = [["นักศึกษา", "วิชา", "การบ้าน", "กำหนดส่ง", "สถานะ", "อีเมลผู้ยืนยัน"]];
+      students.forEach(st => {
+        assignments.forEach(a => {
+          const key = `${a.id}|${st}`;
+          const isDone = statuses[key] === "submitted";
+          const detail = submissionDetails[key] || {};
+          rows.push([st, a.subject, a.title, a.due ? String(a.due).split("T")[0] : "-", isDone ? "ส่งแล้ว" : "ยังไม่ส่ง", detail.updatedBy || "-"]);
+        });
+      });
+      const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\r\n");
+      const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "nursing-assignments-status.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+
+    // Events
+    $("loginBtn").onclick = () => {
+      $("apiUrlInput").value = apiUrl;
+      $("userEmailInput").value = userEmail;
+      openModal("loginModal");
+    };
+
+    $("saveLoginBtn").onclick = async () => {
+      const newUrl = $("apiUrlInput").value.trim();
+      const newEmail = $("userEmailInput").value.trim().toLowerCase();
+      if (!newUrl) return toast("กรุณากรอก Web App URL");
+      if (!newEmail || !newEmail.includes("@")) return toast("กรุณากรอกอีเมลให้ถูกต้อง");
+      
+      apiUrl = newUrl;
+      userEmail = newEmail;
+      linkedName = "";
+      localStorage.setItem("assignmentApiUrl", apiUrl);
+      localStorage.setItem("assignmentUserEmail", userEmail);
+      localStorage.removeItem("assignmentLinkedName");
+      
+      closeModal("loginModal");
+      await connect();
+      if (!linkedName) {
+        openProfileModal();
+      }
+    };
+
+    $("filterSubject").onchange = renderAssignmentList;
+    $("searchBox").oninput = renderAssignmentList;
+    $("ovFilterSubject").onchange = renderOverviewTable;
+    $("ovSearch").oninput = renderOverviewTable;
+
+    // Init
+    connect();
+  </script>
+</body>
+</html>
