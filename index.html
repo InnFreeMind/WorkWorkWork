@@ -78,45 +78,42 @@
     .filter-bar { display: grid; grid-template-columns: 240px 1fr; gap: 12px; margin-bottom: 20px; }
     @media (max-width: 640px) { .filter-bar { grid-template-columns: 1fr; } }
 
-    /* Month & Week Collapsible Accordion */
-    .month-group { border: 1px solid var(--border); border-radius: 14px; margin-bottom: 16px; overflow: hidden; background: rgba(15, 23, 42, 0.45); }
+    /* Month Accordion */
+    .month-box { border: 1px solid var(--border); border-radius: 14px; margin-bottom: 16px; overflow: hidden; background: rgba(15, 23, 42, 0.4); }
     .month-header { background: var(--card-2); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; transition: 0.2s; }
     .month-header:hover { background: #1e293b; }
-    .month-title-wrap { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); flex-wrap: wrap; }
-    .month-arrow { font-size: 13px; color: var(--accent); transition: transform 0.2s; display: inline-block; }
-    .month-group.collapsed .month-arrow { transform: rotate(-90deg); }
-    .month-body { padding: 16px; border-top: 1px solid var(--border); }
-    .month-group.collapsed .month-body { display: none; }
-    .badge-latest { background: rgba(52, 211, 153, 0.18); color: var(--accent); font-size: 11px; padding: 2px 10px; border-radius: 99px; font-weight: 600; border: 1px solid rgba(52, 211, 153, 0.35); }
+    .month-title-wrap { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
+    .month-badge { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: rgba(52, 211, 153, 0.15); color: var(--accent); font-weight: 600; }
+    .month-count { font-size: 13px; color: var(--muted); }
+    .month-body { padding: 16px 18px; }
+    .month-body.collapsed { display: none; }
 
-    /* Week Collapsible Sub-Accordion */
-    .week-group { border: 1px solid rgba(148, 163, 184, 0.15); border-radius: 12px; margin-bottom: 14px; background: rgba(9, 14, 28, 0.45); overflow: hidden; }
+    /* Week Accordion */
+    .week-group { margin-bottom: 16px; border: 1px solid rgba(56, 189, 248, 0.18); border-radius: 12px; background: rgba(8, 13, 26, 0.35); overflow: hidden; }
     .week-group:last-child { margin-bottom: 0; }
-    .week-header { background: rgba(30, 41, 59, 0.55); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; transition: 0.2s; }
-    .week-header:hover { background: rgba(30, 41, 59, 0.9); }
-    .week-title-wrap { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #38bdf8; }
-    .week-arrow { font-size: 11px; color: #38bdf8; transition: transform 0.2s; display: inline-block; }
-    .week-group.collapsed .week-arrow { transform: rotate(-90deg); }
-    .week-body { padding: 14px; border-top: 1px solid rgba(148, 163, 184, 0.12); }
-    .week-group.collapsed .week-body { display: none; }
+    .week-header { font-size: 14px; font-weight: 600; color: #38bdf8; padding: 10px 14px; background: rgba(56, 189, 248, 0.08); display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; transition: 0.2s; }
+    .week-header:hover { background: rgba(56, 189, 248, 0.15); }
+    .week-body { padding: 14px; }
+    .week-body.collapsed { display: none; }
 
     /* Subject Divider & Title */
     .subject-group { margin-bottom: 20px; }
-    .subject-group + .subject-group { border-top: 2px solid rgba(255, 255, 255, 0.55); padding-top: 18px; margin-top: 20px; }
+    .subject-group + .subject-group { border-top: 2px solid rgba(255, 255, 255, 0.55); padding-top: 20px; margin-top: 20px; }
     .subject-group:last-child { margin-bottom: 0; }
     .subject-title { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
 
-    /* Assignment Card & Priority Pills */
+    /* Assignment Card */
     .assign-card { background: var(--card-2); border: 1px solid var(--border); border-radius: 14px; padding: 16px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
     .assign-card:last-child { margin-bottom: 0; }
     .assign-topic { font-size: 12px; color: #38bdf8; font-weight: 500; }
-    .assign-title-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 4px 0; }
-    .assign-title { font-size: 16px; font-weight: 600; }
+    .assign-title-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 4px 0; }
+    .assign-title { font-size: 16px; font-weight: 600; margin: 0; }
     .assign-desc { font-size: 13px; color: var(--muted); margin: 4px 0 8px; }
     .assign-meta { font-size: 12px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
-    .pill { background: rgba(52, 211, 153, 0.12); color: var(--accent); padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; }
-    .pill-normal { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.35); }
+    /* Pills */
+    .pill { background: rgba(52, 211, 153, 0.12); color: var(--accent); padding: 3px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; }
+    .pill-normal { background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); }
     .pill-important { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); }
     .pill-urgent { background: rgba(248, 113, 113, 0.15); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.35); }
 
@@ -200,7 +197,7 @@
       <div class="stat-card">
         <div class="stat-label">รายการที่ส่งแล้ว</div>
         <div class="stat-val" id="statSubmissions">—</div>
-        <div class="stat-sub">จำนวนการส่งรวม</div>
+        <div class="stat-sub">จำนวนการกดเสร็จงานรวม</div>
       </div>
     </div>
 
@@ -213,13 +210,13 @@
       <button class="tab hidden admin-only" data-tab="approve">อนุมัติงาน <span id="propCountBadge"></span></button>
     </div>
 
-    <!-- Tab 1: รายการการบ้าน (แยกตามเดือนและสัปดาห์ตามปฏิทินจริง จันทร์-อาทิตย์) -->
+    <!-- Tab 1: รายการการบ้าน -->
     <div class="section active" id="tab-list">
       <div class="panel">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:14px;">
           <div>
             <h3 style="margin:0;">รายการการบ้านแยกตามเดือนและสัปดาห์</h3>
-            <small style="color:var(--muted);">แสดงเฉพาะเดือนล่าสุดเป็นค่าเริ่มต้น กดที่แถบเดือนหรือสัปดาห์เพื่อย่อหรือขยายได้</small>
+            <small style="color:var(--muted);">แสดงเฉพาะเดือนล่าสุดเป็นค่าเริ่มต้น (คลิกที่แถบเดือนหรือสัปดาห์เพื่อย่อ/ขยาย)</small>
           </div>
           <div style="display:flex; gap:8px; flex-wrap:wrap;">
             <button class="btn btn-sm" onclick="toggleAllAccordions(true)">ขยายทั้งหมด</button>
@@ -300,7 +297,7 @@
           <table>
             <thead>
               <tr>
-                <th>นักศึกษา</th>
+                <th>ผู้ส่ง / นักศึกษา</th>
                 <th>วิชา / การบ้าน</th>
                 <th>สถานะ</th>
                 <th>อีเมลผู้ยืนยัน</th>
@@ -336,7 +333,7 @@
     </div>
   </div>
 
-  <!-- Modal: เข้าสู่ระบบ (เหลือเฉพาะช่องอีเมล) -->
+  <!-- Modal: เข้าสู่ระบบ (เหลือเฉพาะช่องกรอกอีเมล) -->
   <div class="modal-backdrop" id="loginModal">
     <div class="modal">
       <div class="modal-head">
@@ -344,7 +341,7 @@
         <button class="btn btn-sm" onclick="closeModal('loginModal')">✕</button>
       </div>
       <div class="form-group">
-        <label>อีเมลของคุณ (ใช้ได้ทุกอีเมล เพื่อตั้งชื่อโปรไฟล์และส่งงาน)</label>
+        <label>อีเมลของคุณ (กรอกอีเมลใดก็ได้เพื่อเข้าใช้งาน)</label>
         <input type="email" id="userEmailInput" placeholder="example@gmail.com" />
       </div>
       <div class="form-group" style="display:none;">
@@ -355,18 +352,20 @@
     </div>
   </div>
 
-  <!-- Modal: ตั้งค่า / แก้ไขชื่อโปรไฟล์ -->
+  <!-- Modal: ตั้งค่า/แก้ไขชื่อโปรไฟล์ -->
   <div class="modal-backdrop" id="profileModal">
     <div class="modal">
       <div class="modal-head">
         <h3>ตั้งค่า / แก้ไขชื่อโปรไฟล์</h3>
         <button class="btn btn-sm" onclick="closeModal('profileModal')">✕</button>
       </div>
-      <p style="font-size:13px; color:var(--muted); margin-top:0;">ตั้งชื่อที่ต้องการแสดงสำหรับอีเมล <strong id="modalProfileEmail" style="color:var(--text);"></strong></p>
+      <p style="font-size:13px; color:var(--muted); margin-top:0;">
+        พิมพ์ชื่อที่ต้องการตั้งเองได้เลย หรือเลือกจากรายชื่อแนะนำ เพื่อผูกกับอีเมล <strong id="modalProfileEmail" style="color:var(--text);"></strong>
+      </p>
       <div class="form-group">
-        <label>พิมพ์ชื่อที่ต้องการตั้งเอง หรือเลือกจากรายชื่อแนะนำ *</label>
-        <input type="text" id="profileNameInput" list="studentSuggestions" placeholder="พิมพ์ชื่อเล่น หรือ ชื่อ-สกุล..." autocomplete="off" />
-        <datalist id="studentSuggestions"></datalist>
+        <label>ชื่อโปรไฟล์ของคุณ (พิมพ์เองได้อิสระ หรือคลิกเลือกจากรายการ) *</label>
+        <input type="text" id="profileNameInput" list="studentNameOptions" placeholder="พิมพ์ชื่อ-สกุล หรือชื่อเล่นของคุณ..." autocomplete="off" />
+        <datalist id="studentNameOptions"></datalist>
       </div>
       <button class="btn btn-primary" style="width:100%; justify-content:center;" id="saveProfileBtn">บันทึกข้อมูลโปรไฟล์</button>
     </div>
@@ -419,10 +418,10 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    // นำลิงก์ Web App URL ล่าสุดจาก Google Apps Script มาวางทับตรงนี้
+    // ใส่ลิงก์ Google Apps Script Web App URL ล่าสุดของคุณตรงนี้
     const DEFAULT_API_URL = "https://script.google.com/macros/s/AKfycbxAj-vobfbGiC2_WCDMIK4KG_zo5vaighcWvnyDvkSoJSnKGxnaVK2PwTjw_HpBkVwNvQ/exec";
     
-    let apiUrl = DEFAULT_API_URL;
+    let apiUrl = localStorage.getItem("assignmentApiUrl") || DEFAULT_API_URL;
     let userEmail = localStorage.getItem("assignmentUserEmail") || "";
     let linkedName = localStorage.getItem("assignmentLinkedName") || "";
     let isAdmin = false;
@@ -431,18 +430,10 @@
     let statuses = {};
     let submissionDetails = {};
     let proposals = [];
-    let expandedMonths = {};
-    let expandedWeeks = {};
-    let isFirstLoad = true;
 
     const THAI_MONTHS = [
       "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
       "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
-    ];
-
-    const THAI_MONTHS_SHORT = [
-      "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.",
-      "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."
     ];
 
     const $ = id => document.getElementById(id);
@@ -457,6 +448,29 @@
 
     function openModal(id) { $(id).classList.add("open"); }
     function closeModal(id) { $(id).classList.remove("open"); }
+
+    function getPriorityBadge(priority) {
+      const p = String(priority || "ปกติ").trim();
+      if (p === "เร่งด่วน" || p === "เร่งด่วนมาก") {
+        return `<span class="pill pill-urgent">${p}</span>`;
+      }
+      if (p === "สำคัญ") {
+        return `<span class="pill pill-important">สำคัญ</span>`;
+      }
+      return `<span class="pill pill-normal">ปกติ</span>`;
+    }
+
+    // นับจำนวนคนที่กดเสร็จงานจริงของแต่ละการบ้าน (นับจากรายการที่มีสถานะ submitted ในระบบ)
+    function getSubmittedCountForAssign(assignId) {
+      const prefix = `${assignId}|`;
+      let count = 0;
+      for (const [key, val] of Object.entries(statuses)) {
+        if (key.startsWith(prefix) && val === "submitted") {
+          count++;
+        }
+      }
+      return count;
+    }
 
     function callApi(action, params = {}) {
       return new Promise((resolve, reject) => {
@@ -501,6 +515,8 @@
         statuses = data.statuses || {};
         submissionDetails = data.submissionDetails || {};
         proposals = data.proposals || [];
+        
+        // บังคับตรวจสอบว่าต้องมี userEmail และ data.isAdmin เป็นจริงเท่านั้น
         isAdmin = !!(userEmail && data.isAdmin);
 
         if (userEmail && data.linkedName) {
@@ -555,90 +571,9 @@
       btn.onclick = () => switchTab(btn.dataset.tab);
     });
 
-    function getPriorityBadge(priority) {
-      const p = String(priority || "ปกติ").trim();
-      if (p === "เร่งด่วน" || p === "เร่งด่วนมาก") {
-        return `<span class="pill pill-urgent">${p}</span>`;
-      }
-      if (p === "สำคัญ") {
-        return `<span class="pill pill-important">${p}</span>`;
-      }
-      return `<span class="pill pill-normal">${p}</span>`;
-    }
-
-    function getMonthInfo(dueStr) {
-      if (!dueStr) return { key: "0000-00", label: "ไม่ระบุกำหนดส่ง", sortVal: 0, year: 0, month: 0, day: 0 };
-      const clean = String(dueStr).split("T")[0].trim();
-      const parts = clean.split("-");
-      if (parts.length >= 3) {
-        const y = parseInt(parts[0], 10);
-        const m = parseInt(parts[1], 10);
-        const d = parseInt(parts[2], 10);
-        if (!isNaN(y) && !isNaN(m) && !isNaN(d) && m >= 1 && m <= 12) {
-          const thaiYear = y < 2400 ? y + 543 : y;
-          const adYear = y > 2400 ? y - 543 : y;
-          return {
-            key: `${y}-${String(m).padStart(2, "0")}`,
-            label: `เดือน${THAI_MONTHS[m - 1]} ${thaiYear}`,
-            sortVal: y * 100 + m,
-            year: adYear,
-            month: m,
-            day: d
-          };
-        }
-      }
-      return { key: "0000-00", label: "ไม่ระบุกำหนดส่ง", sortVal: 0, year: 0, month: 0, day: 0 };
-    }
-
-    // คำนวณสัปดาห์ตามปฏิทินจริง โดยนับวันจันทร์เป็นวันแรกของสัปดาห์ (จันทร์ - อาทิตย์)
-    function getCalendarWeekInfo(adYear, month, day) {
-      if (!adYear || !month || !day) {
-        return { weekNum: 0, label: "ไม่ระบุสัปดาห์" };
-      }
-      const firstDayObj = new Date(adYear, month - 1, 1);
-      // แปลง getDay() (0=อา, 1=จ, ..., 6=ส) ให้เป็น (0=จ, 1=อ, ..., 6=อา)
-      const firstDayMonBased = (firstDayObj.getDay() + 6) % 7;
-      const daysInMonth = new Date(adYear, month, 0).getDate();
-
-      const weekNum = Math.ceil((day + firstDayMonBased) / 7);
-      const startDay = Math.max(1, (weekNum - 1) * 7 - firstDayMonBased + 1);
-      const endDay = Math.min(daysInMonth, weekNum * 7 - firstDayMonBased);
-      const mShort = THAI_MONTHS_SHORT[month - 1];
-
-      const rangeText = startDay === endDay ? `วันที่ ${startDay} ${mShort}` : `วันที่ ${startDay} - ${endDay} ${mShort}`;
-      return {
-        weekNum,
-        label: `สัปดาห์ที่ ${weekNum} (${rangeText})`
-      };
-    }
-
-    window.toggleMonthGroup = function(key) {
-      expandedMonths[key] = !expandedMonths[key];
-      const el = document.getElementById("month-box-" + key);
-      if (el) el.classList.toggle("collapsed", !expandedMonths[key]);
-    };
-
-    window.toggleWeekGroup = function(weekKey) {
-      expandedWeeks[weekKey] = !expandedWeeks[weekKey];
-      const el = document.getElementById("week-box-" + weekKey);
-      if (el) el.classList.toggle("collapsed", !expandedWeeks[weekKey]);
-    };
-
-    window.toggleAllAccordions = function(expand) {
-      document.querySelectorAll(".month-group").forEach(el => {
-        const key = el.dataset.monthKey;
-        expandedMonths[key] = expand;
-        el.classList.toggle("collapsed", !expand);
-      });
-      document.querySelectorAll(".week-group").forEach(el => {
-        const wKey = el.dataset.weekKey;
-        expandedWeeks[wKey] = expand;
-        el.classList.toggle("collapsed", !expand);
-      });
-    };
-
     function renderAll() {
       const subjects = [...new Set(assignments.map(a => a.subject).filter(Boolean))];
+      // นับจำนวนการกดเสร็จงานรวมทั้งหมดจาก statuses จริง
       const submittedCount = Object.values(statuses).filter(s => s === "submitted").length;
       $("statSubjects").textContent = subjects.length;
       $("statAssignments").textContent = assignments.length;
@@ -654,15 +589,105 @@
       $("ovFilterSubject").innerHTML = subOptions;
       $("ovFilterSubject").value = curOvFilter;
 
-      $("studentSuggestions").innerHTML = students.map(st => `<option value="${st}">`).join("");
+      $("studentNameOptions").innerHTML = students.map(st => `<option value="${st}">`).join("");
 
       renderAssignmentList();
-      if (isAdmin) {
+      if (userEmail && isAdmin) {
         renderOverviewTable();
         renderManageList();
         renderProposalList();
       }
     }
+
+    // แปลงวันที่เป็นข้อมูล เดือน และ สัปดาห์ตามปฏิทินจริง (นับวันจันทร์เป็นวันแรกของสัปดาห์ จันทร์ - อาทิตย์)
+    function getMonthAndCalendarWeekInfo(dueStr) {
+      if (!dueStr) {
+        return {
+          monthKey: "0000-00",
+          monthLabel: "ไม่ระบุกำหนดส่ง",
+          weekNum: 99,
+          weekLabel: "ไม่ระบุสัปดาห์"
+        };
+      }
+      const clean = String(dueStr).split("T")[0].trim();
+      const parts = clean.split("-");
+      if (parts.length < 3) {
+        return {
+          monthKey: "0000-00",
+          monthLabel: "ไม่ระบุกำหนดส่ง",
+          weekNum: 99,
+          weekLabel: "ไม่ระบุสัปดาห์"
+        };
+      }
+      const year = parseInt(parts[0], 10);
+      const monthIdx = parseInt(parts[1], 10) - 1;
+      const day = parseInt(parts[2], 10);
+
+      if (isNaN(year) || isNaN(monthIdx) || isNaN(day) || monthIdx < 0 || monthIdx > 11) {
+        return {
+          monthKey: "0000-00",
+          monthLabel: "ไม่ระบุกำหนดส่ง",
+          weekNum: 99,
+          weekLabel: "ไม่ระบุสัปดาห์"
+        };
+      }
+
+      const monthKey = `${parts[0]}-${parts[1].padStart(2, "0")}`;
+      const thaiYear = year + 543;
+      const monthShort = THAI_MONTHS[monthIdx].slice(0, 3);
+      const monthLabel = `เดือน ${THAI_MONTHS[monthIdx]} ${thaiYear}`;
+
+      // คำนวณสัปดาห์ตามปฏิทินจริง โดยให้นับวันจันทร์เป็นวันเริ่มต้นสัปดาห์ (จันทร์ = 0 ... อาทิตย์ = 6)
+      const firstDayRaw = new Date(year, monthIdx, 1).getDay(); // 0=อาทิตย์, 1=จันทร์, ..., 6=เสาร์
+      const firstDayMonOffset = (firstDayRaw === 0) ? 6 : (firstDayRaw - 1);
+      const daysInMonth = new Date(year, monthIdx + 1, 0).getDate();
+
+      const weekNum = Math.floor((day + firstDayMonOffset - 1) / 7) + 1;
+      const startDay = Math.max(1, (weekNum - 1) * 7 - firstDayMonOffset + 1);
+      const endDay = Math.min(daysInMonth, weekNum * 7 - firstDayMonOffset);
+
+      const rangeText = (startDay === endDay)
+        ? `วันที่ ${startDay} ${monthShort}`
+        : `วันที่ ${startDay} - ${endDay} ${monthShort}`;
+
+      return {
+        monthKey,
+        monthLabel,
+        weekNum,
+        weekLabel: `สัปดาห์ที่ ${weekNum} (${rangeText})`
+      };
+    }
+
+    window.toggleMonthBox = function(monthKey) {
+      const body = document.getElementById(`month-body-${monthKey}`);
+      const arrow = document.getElementById(`month-arrow-${monthKey}`);
+      if (!body) return;
+      const isCollapsed = body.classList.toggle("collapsed");
+      if (arrow) arrow.textContent = isCollapsed ? "▶" : "▼";
+    };
+
+    window.toggleWeekBox = function(weekId) {
+      const body = document.getElementById(`week-body-${weekId}`);
+      const arrow = document.getElementById(`week-arrow-${weekId}`);
+      if (!body) return;
+      const isCollapsed = body.classList.toggle("collapsed");
+      if (arrow) arrow.textContent = isCollapsed ? "▶" : "▼";
+    };
+
+    window.toggleAllAccordions = function(expand) {
+      document.querySelectorAll(".month-body").forEach(b => {
+        b.classList.toggle("collapsed", !expand);
+      });
+      document.querySelectorAll(".month-arrow").forEach(a => {
+        a.textContent = expand ? "▼" : "▶";
+      });
+      document.querySelectorAll(".week-body").forEach(b => {
+        b.classList.toggle("collapsed", !expand);
+      });
+      document.querySelectorAll(".week-arrow").forEach(a => {
+        a.textContent = expand ? "▼" : "▶";
+      });
+    };
 
     function renderAssignmentList() {
       const fSub = $("filterSubject").value;
@@ -678,83 +703,105 @@
         return;
       }
 
-      const monthMap = {};
+      // 1. จัดกลุ่มตามเดือน -> สัปดาห์ตามปฏิทินจริง (จันทร์-อาทิตย์)
+      const monthGroups = {};
       filtered.forEach(a => {
-        const mInfo = getMonthInfo(a.due);
-        if (!monthMap[mInfo.key]) {
-          monthMap[mInfo.key] = { ...mInfo, items: [] };
+        const info = getMonthAndCalendarWeekInfo(a.due);
+        if (!monthGroups[info.monthKey]) {
+          monthGroups[info.monthKey] = {
+            monthKey: info.monthKey,
+            monthLabel: info.monthLabel,
+            totalCount: 0,
+            weeks: {}
+          };
         }
-        monthMap[mInfo.key].items.push({ ...a, _mInfo: mInfo });
+        monthGroups[info.monthKey].totalCount++;
+
+        if (!monthGroups[info.monthKey].weeks[info.weekNum]) {
+          monthGroups[info.monthKey].weeks[info.weekNum] = {
+            weekNum: info.weekNum,
+            weekLabel: info.weekLabel,
+            items: []
+          };
+        }
+        monthGroups[info.monthKey].weeks[info.weekNum].items.push(a);
       });
 
-      const sortedMonths = Object.values(monthMap).sort((a, b) => b.sortVal - a.sortVal);
-
-      if (isFirstLoad && sortedMonths.length > 0) {
-        sortedMonths.forEach((m, idx) => {
-          expandedMonths[m.key] = (idx === 0);
-        });
-        isFirstLoad = false;
-      }
+      // เรียงเดือนจากล่าสุดไปเก่าสุด
+      const sortedMonthKeys = Object.keys(monthGroups).sort((a, b) => b.localeCompare(a));
 
       let html = "";
-      sortedMonths.forEach((mGroup, idx) => {
-        const isLatest = idx === 0 && mGroup.key !== "0000-00";
-        const isMonthOpen = q || fSub ? true : !!expandedMonths[mGroup.key];
+      sortedMonthKeys.forEach((mKey, mIdx) => {
+        const mGroup = monthGroups[mKey];
+        const isLatestMonth = (mIdx === 0);
+        const collapsedClass = isLatestMonth ? "" : "collapsed";
+        const arrowIcon = isLatestMonth ? "▼" : "▶";
+        const latestBadge = isLatestMonth ? `<span class="month-badge">เดือนล่าสุด</span>` : "";
 
-        // จัดกลุ่มตามสัปดาห์ตามปฏิทินจริง (จันทร์ - อาทิตย์)
-        const weekMap = {};
-        mGroup.items.forEach(item => {
-          const wInfo = getCalendarWeekInfo(item._mInfo.year, item._mInfo.month, item._mInfo.day);
-          const wKey = `${mGroup.key}-W${wInfo.weekNum}`;
-          if (!weekMap[wKey]) {
-            weekMap[wKey] = { ...wInfo, wKey, items: [] };
-          }
-          weekMap[wKey].items.push(item);
-        });
+        html += `
+          <div class="month-box">
+            <div class="month-header" onclick="toggleMonthBox('${mKey}')">
+              <div class="month-title-wrap">
+                <span class="month-arrow" id="month-arrow-${mKey}">${arrowIcon}</span>
+                <span>📅 ${mGroup.monthLabel}</span>
+                ${latestBadge}
+              </div>
+              <div class="month-count">${mGroup.totalCount} รายการ</div>
+            </div>
+            <div class="month-body ${collapsedClass}" id="month-body-${mKey}">`;
 
-        const sortedWeeks = Object.values(weekMap).sort((a, b) => a.weekNum - b.weekNum);
-        let weeksHtml = "";
+        // เรียงสัปดาห์ตามลำดับสัปดาห์ 1 -> 6
+        const sortedWeekNums = Object.keys(mGroup.weeks).map(Number).sort((a, b) => a - b);
 
-        sortedWeeks.forEach(wGroup => {
-          if (expandedWeeks[wGroup.wKey] === undefined) {
-            expandedWeeks[wGroup.wKey] = true; // เปิดสัปดาห์ไว้เป็นค่าเริ่มต้นเมื่อเปิดเดือน
-          }
-          const isWeekOpen = q || fSub ? true : !!expandedWeeks[wGroup.wKey];
+        sortedWeekNums.forEach(wNum => {
+          const wGroup = mGroup.weeks[wNum];
+          const weekDomId = `${mKey}-w${wNum}`;
+          html += `
+            <div class="week-group">
+              <div class="week-header" onclick="toggleWeekBox('${weekDomId}')">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span class="week-arrow" id="week-arrow-${weekDomId}">▼</span>
+                  <span>🗓 ${wGroup.weekLabel}</span>
+                </div>
+                <span style="font-size:12px; color:var(--muted);">${wGroup.items.length} งาน</span>
+              </div>
+              <div class="week-body" id="week-body-${weekDomId}">`;
 
-          // จัดกลุ่มตามรายวิชาภายในสัปดาห์
-          const subjectMap = {};
+          // จัดกลุ่มตามรายวิชาภายในสัปดาห์นั้น
+          const subjectGrouped = {};
           wGroup.items.forEach(a => {
             const sub = a.subject || "ทั่วไป";
-            if (!subjectMap[sub]) subjectMap[sub] = [];
-            subjectMap[sub].push(a);
+            if (!subjectGrouped[sub]) subjectGrouped[sub] = [];
+            subjectGrouped[sub].push(a);
           });
 
-          let subjectsHtml = "";
-          for (const [sub, list] of Object.entries(subjectMap)) {
-            subjectsHtml += `<div class="subject-group"><div class="subject-title">📘 ${sub}</div>`;
+          for (const [sub, list] of Object.entries(subjectGrouped)) {
+            html += `<div class="subject-group"><div class="subject-title">📘 ${sub}</div>`;
             list.forEach(a => {
-              const doneCount = students.filter(st => statuses[`${a.id}|${st}`] === "submitted").length;
+              // นับจำนวนคนที่กดเสร็จงานจริงของวิชานี้
+              const doneCount = getSubmittedCountForAssign(a.id);
               const dueText = a.due ? String(a.due).split("T")[0] : "ไม่ระบุ";
               const isMyWorkDone = linkedName && statuses[`${a.id}|${linkedName}`] === "submitted";
+              const priorityBadge = getPriorityBadge(a.priority);
 
               let actionBtnHtml = "";
               if (!userEmail) {
                 actionBtnHtml = `<button class="btn btn-sm" onclick="openModal('loginModal')">เข้าสู่ระบบเพื่อส่งงาน</button>`;
               } else if (!linkedName) {
-                actionBtnHtml = `<button class="btn btn-sm" onclick="openProfileModal()">ตั้งชื่อโปรไฟล์เพื่อกดส่งงาน</button>`;
+                actionBtnHtml = `<button class="btn btn-sm" onclick="openProfileModal()">ตั้งชื่อเพื่อกดส่งงาน</button>`;
               } else if (isMyWorkDone) {
                 actionBtnHtml = `<button class="btn btn-done btn-sm" onclick="toggleMyWork('${a.id}', 'pending')">✓ เสร็จงานแล้ว (${linkedName})</button>`;
               } else {
                 actionBtnHtml = `<button class="btn btn-primary btn-sm" onclick="toggleMyWork('${a.id}', 'submitted')">กดเสร็จงาน</button>`;
               }
 
-              subjectsHtml += `
+              html += `
                 <div class="assign-card">
                   <div style="flex:1; min-width:240px;">
                     <div class="assign-topic">${a.topic || "ทั่วไป"}</div>
                     <div class="assign-title-row">
-                      <span class="assign-title">${a.title}</span>
-                      ${getPriorityBadge(a.priority)}
+                      <h4 class="assign-title">${a.title}</h4>
+                      ${priorityBadge}
                     </div>
                     <div class="assign-desc">${a.description || "-"}</div>
                     <div class="assign-meta">
@@ -765,34 +812,13 @@
                   <div>${actionBtnHtml}</div>
                 </div>`;
             });
-            subjectsHtml += `</div>`;
+            html += `</div>`;
           }
 
-          weeksHtml += `
-            <div class="week-group ${isWeekOpen ? "" : "collapsed"}" id="week-box-${wGroup.wKey}" data-week-key="${wGroup.wKey}">
-              <div class="week-header" onclick="toggleWeekGroup('${wGroup.wKey}')">
-                <div class="week-title-wrap">
-                  <span class="week-arrow">▼</span>
-                  <span>🗓 ${wGroup.label}</span>
-                </div>
-                <div style="font-size:12px; color:var(--muted);">${wGroup.items.length} งาน</div>
-              </div>
-              <div class="week-body">${subjectsHtml}</div>
-            </div>`;
+          html += `</div></div>`; // ปิด week-body และ week-group
         });
 
-        html += `
-          <div class="month-group ${isMonthOpen ? "" : "collapsed"}" id="month-box-${mGroup.key}" data-month-key="${mGroup.key}">
-            <div class="month-header" onclick="toggleMonthGroup('${mGroup.key}')">
-              <div class="month-title-wrap">
-                <span class="month-arrow">▼</span>
-                <span>${mGroup.label}</span>
-                ${isLatest ? '<span class="badge-latest">เดือนล่าสุด</span>' : ''}
-              </div>
-              <div style="font-size:13px; color:var(--muted);">ทั้งหมด ${mGroup.items.length} งาน</div>
-            </div>
-            <div class="month-body">${weeksHtml}</div>
-          </div>`;
+        html += `</div></div>`; // ปิด month-body และ month-box
       });
 
       $("assignmentListContainer").innerHTML = html;
@@ -821,12 +847,12 @@
     $("editProfileBtn").onclick = openProfileModal;
 
     $("saveProfileBtn").onclick = async () => {
-      const customName = $("profileNameInput").value.trim();
-      if (!customName) return toast("กรุณากรอกหรือเลือกชื่อที่ต้องการตั้ง");
+      const typedName = $("profileNameInput").value.trim();
+      if (!typedName) return toast("กรุณากรอกหรือเลือกชื่อโปรไฟล์ของคุณ");
       try {
         $("saveProfileBtn").disabled = true;
-        await callApi("saveProfile", { studentName: customName });
-        linkedName = customName;
+        await callApi("saveProfile", { studentName: typedName });
+        linkedName = typedName;
         localStorage.setItem("assignmentLinkedName", linkedName);
         closeModal("profileModal");
         connect();
@@ -848,13 +874,18 @@
       toast("ออกจากระบบแล้ว");
     };
 
-    // Admin: Overview Table
+    // Admin: Overview Table (แสดงรายชื่อนักศึกษา + ผู้ที่ตั้งชื่อเองและกดส่งงานเข้ามา)
     function renderOverviewTable() {
       const fSub = $("ovFilterSubject").value;
       const q = $("ovSearch").value.toLowerCase().trim();
       let html = "";
 
-      const allNames = [...new Set([...students, ...Object.keys(statuses).map(k => k.split("|")[1]).filter(Boolean)])];
+      const allNamesSet = new Set(students);
+      Object.keys(statuses).forEach(k => {
+        const parts = k.split("|");
+        if (parts[1]) allNamesSet.add(parts[1]);
+      });
+      const allNames = [...allNamesSet];
 
       allNames.forEach(st => {
         assignments.forEach(a => {
@@ -903,11 +934,11 @@
           <div>
             <div class="assign-topic">${a.subject} • ${a.topic || "ทั่วไป"}</div>
             <div class="assign-title-row">
-              <span class="assign-title">${a.title}</span>
+              <h4 class="assign-title">${a.title}</h4>
               ${getPriorityBadge(a.priority)}
             </div>
             <div class="assign-desc">${a.description || "-"}</div>
-            <div class="assign-meta"><span>📅 กำหนดส่ง: ${a.due || "ไม่ระบุ"}</span></div>
+            <div class="assign-meta"><span>📅 กำหนดส่ง: ${a.due ? String(a.due).split("T")[0] : "ไม่ระบุ"}</span></div>
           </div>
           <div style="display:flex; gap:8px;">
             <button class="btn btn-sm" onclick="openEditAssign('${a.id}')">แก้ไข</button>
@@ -1003,7 +1034,7 @@
           <div>
             <div class="assign-topic">${p.subject}</div>
             <div class="assign-title-row">
-              <span class="assign-title">${p.title}</span>
+              <h4 class="assign-title">${p.title}</h4>
               ${getPriorityBadge(p.priority)}
             </div>
             <div class="assign-desc">${p.description || "-"}</div>
@@ -1032,18 +1063,23 @@
 
     // Export CSV
     $("exportBtn").onclick = () => {
-      const rows = [["นักศึกษา", "วิชา", "การบ้าน", "ความสำคัญ", "สถานะ", "อีเมลผู้ยืนยัน"]];
-      const allNames = [...new Set([...students, ...Object.keys(statuses).map(k => k.split("|")[1]).filter(Boolean)])];
-      allNames.forEach(st => {
+      const rows = [["ผู้ส่ง / นักศึกษา", "วิชา", "การบ้าน", "สถานะ", "อีเมลผู้ยืนยัน"]];
+      const allNamesSet = new Set(students);
+      Object.keys(statuses).forEach(k => {
+        const parts = k.split("|");
+        if (parts[1]) allNamesSet.add(parts[1]);
+      });
+      [...allNamesSet].forEach(st => {
         assignments.forEach(a => {
           const key = `${a.id}|${st}`;
           const isDone = statuses[key] === "submitted";
           const detail = submissionDetails[key] || {};
-          rows.push([st, a.subject, a.title, a.priority || "ปกติ", isDone ? "ส่งแล้ว" : "ยังไม่ส่ง", detail.updatedBy || "-"]);
+          rows.push([st, a.subject, a.title, isDone ? "ส่งแล้ว" : "ยังไม่ส่ง", detail.updatedBy || "-"]);
         });
       });
-      const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("\r\n");
-      const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" });
+      const csv = rows.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(",")).join("
+");
+      const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
@@ -1060,11 +1096,14 @@
     };
 
     $("saveLoginBtn").onclick = async () => {
+      const newUrl = $("apiUrlInput").value.trim() || DEFAULT_API_URL;
       const newEmail = $("userEmailInput").value.trim().toLowerCase();
       if (!newEmail || !newEmail.includes("@")) return toast("กรุณากรอกอีเมลให้ถูกต้อง");
       
+      apiUrl = newUrl;
       userEmail = newEmail;
       linkedName = "";
+      localStorage.setItem("assignmentApiUrl", apiUrl);
       localStorage.setItem("assignmentUserEmail", userEmail);
       localStorage.removeItem("assignmentLinkedName");
       
